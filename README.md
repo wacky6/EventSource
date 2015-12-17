@@ -1,6 +1,9 @@
 EventSource
 ===
-A constrained but fast EventEmitter alternative
+A constrained but fast EventEmitter alternative.
+
+Don't get confused with W3 EventSource!  
+This is a EventEmitter alternative (for simple situations). Not Server-Sent-Event!
 
 ## Goal
 * No event name
@@ -9,7 +12,11 @@ A constrained but fast EventEmitter alternative
 You are welcomed to help optimize this library
 
 ## Usage
+
+`npm install node-event-source`
+
 ```JavaScript
+let EventSource = require('node-event-source')
 let es = new EventSource()
 let callback = (arg)=>console.log(arg)
 es.attach( callback )
