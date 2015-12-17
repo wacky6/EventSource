@@ -3,18 +3,36 @@ EventSource
 A constrained but fast EventEmitter alternative
 
 ## Goal
-* Emit only one argument
 * No event name
-* Fast
+* Fast for one-or-two listeners
 
 You are welcomed to help optimize this library
 
+## Usage
+```JavaScript
+let es = new EventSource()
+let callback = (arg)=>console.log(arg)
+es.attach( callback )
+es.emit('hello world')   // es.emit === callback
+```
+
+You can chain `attach`, `detach` together. But not `emit`
+
 ## API
 ##### EventSource.attach(callback)
-add callback to listeners
+Add callback to listeners
 
 ##### EventSource.detach(callback)
-remove callback from listeners
+Remove callback from listeners
+
+##### EventSource.emit(arguments)
+Emit event, calls all listeners  
+If there is only one listener, this method is the listener itself
+
+
+## Internals
+If there is only one listener, `this.emit` directly set as listener  
+If there is more than one listener, they are stored in an Array, then called in a for-loop in `this.emit()`
 
 
 ## Benchmark

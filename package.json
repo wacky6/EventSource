@@ -1,6 +1,6 @@
 {
   "name": "event-source",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Constrained but fast EventEmitter",
   "main": "EventSource.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/wacky6/EventSource.git"
   },
   "keywords": [
-    "eventemitter"
+    "eventemitter", "simplified"
   ],
   "author": "wacky6",
   "license": "MIT",

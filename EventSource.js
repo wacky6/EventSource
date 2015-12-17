@@ -43,7 +43,7 @@ class EventSource {
 function emitN(arg) {
     let i, len = this.listener.length
     for (let i=0; i!==len; ++i)
-        this.listener[i].call(this, arg)
+        this.listener[i].apply(this, arguments)
 }
 
 module.exports = EventSource
