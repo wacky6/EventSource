@@ -1,5 +1,5 @@
 {
-  "name": "event-source",
+  "name": "node-event-source",
   "version": "0.4.1",
   "description": "Constrained but fast EventEmitter",
   "main": "EventSource.js",
